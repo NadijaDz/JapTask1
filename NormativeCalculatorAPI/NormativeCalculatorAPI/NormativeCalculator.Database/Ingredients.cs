@@ -23,7 +23,7 @@ namespace NormativeCalculator.Database
         public MeasureUnits MeasureUnit { get; set; }
         public int MeasureUnit_Id { get; set; }
 
-        public IEnumerable<Recipes> Recipes { get; set; }
+        public IEnumerable<Recipes_Ingredients> Recipes_Ingredients { get; set; }
 
 
     }

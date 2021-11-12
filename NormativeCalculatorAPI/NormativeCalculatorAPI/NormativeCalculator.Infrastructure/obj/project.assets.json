@@ -1618,6 +1618,9 @@
       "NormativeCalculator.DTOs/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "NormativeCalculator.Database": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/NormativeCalculator.DTOs.dll": {}
         },

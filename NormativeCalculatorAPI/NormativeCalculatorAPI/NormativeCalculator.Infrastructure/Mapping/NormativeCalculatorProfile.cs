@@ -10,7 +10,10 @@ namespace NormativeCalculator.Infrastructure.Mapping
         {
 
             CreateMap<RecipeCategories, RecipeCategoriesGetDto>();
-            
+            CreateMap<Recipes, RecipesGetDto>();
+
+
+
         }
     }
 }

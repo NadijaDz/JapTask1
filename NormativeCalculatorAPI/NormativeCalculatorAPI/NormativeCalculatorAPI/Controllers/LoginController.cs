@@ -1,15 +1,14 @@
 ﻿using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using NormativeCalculator.Database;
 using System;
+using System.Web;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 
 namespace NormativeCalculatorAPI.Controllers
 {
@@ -31,8 +30,9 @@ namespace NormativeCalculatorAPI.Controllers
         public IActionResult SignInWithGoogle(string provider, string returnUrl)
         {
             // Request a redirect to the external login provider.
-            string redirectUrl = "https://localhost:5001/api/Login/external-callback?returnUrl=http%3A%2F%2Flocalhost%3A4200%2F";
-  
+            //string redirectUrl = "https://localhost:5001/api/Login/external-callback?returnUrl=" + returnUrl;
+            string redirectUrl = Url.Action(nameof(ExternalLoginCallback), "Login", new { returnUrl });
+
             AuthenticationProperties properties = _signInManager.ConfigureExternalAuthenticationProperties(provider, redirectUrl);
 
             return Challenge(properties, provider);
@@ -49,7 +49,7 @@ namespace NormativeCalculatorAPI.Controllers
 
             // Sign in the user with this external login provider if the user already has a login.
             Microsoft.AspNetCore.Identity.SignInResult result =
-                await _signInManager.ExternalLoginSignInAsync(info.LoginProvider, info.ProviderKey, isPersistent: false, bypassTwoFactor: true);
+                await _signInManager.ExternalLoginSignInAsync(info.LoginProvider, info.ProviderKey, isPersistent: true, bypassTwoFactor: true);
 
             if (result.Succeeded)
             {
@@ -90,8 +90,15 @@ namespace NormativeCalculatorAPI.Controllers
             }
         }
 
-      
 
+        [HttpGet("signout-google")]
+        [Authorize]
+
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+            return Ok();
+        }
 
     }
 }

@@ -1,6 +1,10 @@
+
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { first } from 'rxjs/operators';
 import { RecipeCategoriesService } from 'src/app/services/recipe-categories.service';
+import { RecipesService } from 'src/app/services/recipes.service';
+
 
 @Component({
   selector: 'app-recipe-categories',
@@ -9,10 +13,16 @@ import { RecipeCategoriesService } from 'src/app/services/recipe-categories.serv
 })
 export class RecipeCategoriesComponent implements OnInit {
   recipeCategories:any=[];
-  take: number=10;
+  recipes:any=[];
+  request:any[]=[];
+  skip: number=0;
+  isLodaMore:boolean=true;
 
-  constructor(private recipeCategoriesService: RecipeCategoriesService) {
-    
+
+
+
+  constructor(private recipeCategoriesService: RecipeCategoriesService,
+    private router: Router) {
    }
 
   ngOnInit() {
@@ -21,17 +31,28 @@ export class RecipeCategoriesComponent implements OnInit {
 
   
   getRecipeCategories() {
-
     this.recipeCategoriesService
-      .get(this.take)
+      .get(this.skip)
       .pipe(first())
       .subscribe(
-        (data) => {
-          this.recipeCategories=data;
+        (response:any) => {
+  
+          response.data.forEach(val => this.recipeCategories.push(Object.assign({}, val))); 
+  
+          if(this.recipeCategories.length==response.totalCount){
+            this.isLodaMore=false;
+          }
+
         },
        
       );
   }
 
+  loadMore(){
+    this.skip=this.recipeCategories.length;
+    this.getRecipeCategories();
+  }
 
+
+ 
 }

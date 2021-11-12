@@ -10,9 +10,10 @@ export class RecipeCategoriesService {
 
   constructor(private http: HttpClient) {}
 
-  get(take:any) {
+  get(skip:any) {
     return this.http.get<any[]>(`${environment.apiUrl}` + this.endpoint, {
-         params:new HttpParams().set("take", take),
+         params:new HttpParams()
+         .set("skip", skip),
          withCredentials: true
     } );
   }

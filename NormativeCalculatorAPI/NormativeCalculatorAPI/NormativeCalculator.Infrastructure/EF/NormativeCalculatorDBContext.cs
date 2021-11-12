@@ -19,7 +19,6 @@ namespace NormativeCalculator.Infrastructure.EF
         public DbSet<Recipes> Recipes { get; set; }
         public DbSet<RecipeCategories> RecipeCategories { get; set; }
         public DbSet<MeasureUnits> MeasureUnits { get; set; }
-        public DbSet<Users> Users { get; set; }
         public DbSet<Recipes_Ingredients> Recipes_Ingredients { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

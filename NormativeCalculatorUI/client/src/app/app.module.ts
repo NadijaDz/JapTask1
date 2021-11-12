@@ -11,6 +11,7 @@ import { IngredientsComponent } from './ingredients/ingredients/ingredients.comp
 import { RecipeCategoriesComponent } from './recipe_categories/recipe-categories/recipe-categories.component';
 import { HomeComponent } from './home/home/home.component';
 import { CookieService } from 'ngx-cookie-service';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -28,7 +29,8 @@ import { CookieService } from 'ngx-cookie-service';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule
   ],
   providers: [
     CookieService

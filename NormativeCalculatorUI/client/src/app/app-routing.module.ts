@@ -17,7 +17,7 @@ const routes: Routes = [
     children:[
     // {path:'', component: HomeComponent},
     {path:'ingredients', component: IngredientsComponent},
-    {path:'recipes', component: RecipesComponent,},
+    {path:'recipes/:id', component: RecipesComponent,},
     {path:'recipeCategories', component: RecipeCategoriesComponent}
     ]},
     {path:'**', component: LoginComponent, pathMatch:'full'},

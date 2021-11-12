@@ -1154,6 +1154,9 @@
         }
       },
       "NormativeCalculator.DTOs/1.0.0": {
+        "dependencies": {
+          "NormativeCalculator.Database": "1.0.0"
+        },
         "runtime": {
           "NormativeCalculator.DTOs.dll": {}
         }

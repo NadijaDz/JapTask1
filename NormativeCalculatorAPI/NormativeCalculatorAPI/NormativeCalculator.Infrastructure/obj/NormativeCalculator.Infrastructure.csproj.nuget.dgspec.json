@@ -107,7 +107,11 @@
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Nadija\\Desktop\\JAP Task 1\\NormativeCalculatorAPI\\NormativeCalculatorAPI\\NormativeCalculator.Database\\NormativeCalculator.Database.csproj": {
+                "projectPath": "C:\\Users\\Nadija\\Desktop\\JAP Task 1\\NormativeCalculatorAPI\\NormativeCalculatorAPI\\NormativeCalculator.Database\\NormativeCalculator.Database.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -25,11 +26,10 @@ namespace NormativeCalculator.Database
         public RecipeCategories RecipeCategory { get; set; }
         public int RecipeCategory_Id { get; set; }
 
-        [ForeignKey("User_Id")]
-        public Users User { get; set; }
-        public int User_Id { get; set; }
+        public IdentityUser User{ get; set; }
 
-        public IEnumerable<Ingredients> Ingredients { get; set; }
+
+        public IEnumerable<Recipes_Ingredients> Recipes_Ingredients { get; set; }
 
 
     }

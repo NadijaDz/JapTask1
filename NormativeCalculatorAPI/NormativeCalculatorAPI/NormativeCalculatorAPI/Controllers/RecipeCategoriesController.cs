@@ -21,11 +21,11 @@ namespace NormativeCalculatorAPI.Controllers
         [Authorize]
         //[Route("GetRecipeCategories")]
         [HttpGet]
-        public async Task<IActionResult> GetRecipeCategoriesAsync([FromQuery] int take, CancellationToken cancellationToken)
+        public async Task<IActionResult> GetRecipeCategoriesAsync([FromQuery] int skip, CancellationToken cancellationToken)
         {
             try
             {
-                return Ok(await _recipeCategories.GetRecipeCategoriesAsync(take, cancellationToken));
+                return Ok(await _recipeCategories.GetRecipeCategoriesAsync(skip, cancellationToken));
             }
             catch (Exception ex)
             {

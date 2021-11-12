@@ -13,7 +13,7 @@ namespace NormativeCalculator.Infrastructure.Services
 
     public interface IRecipeCategoriesService
     {
-        Task<List<RecipeCategoriesGetDto>> GetRecipeCategoriesAsync(int take, CancellationToken cancellationToken);
+        Task<PaginationModel<List<RecipeCategoriesGetDto>>> GetRecipeCategoriesAsync(int skip, CancellationToken cancellationToken);
     }
 
     public class RecipeCategoriesService: IRecipeCategoriesService
@@ -26,10 +26,18 @@ namespace NormativeCalculator.Infrastructure.Services
             _context = context;
             _mapper = mapper;
         }
-        public async Task<List<RecipeCategoriesGetDto>> GetRecipeCategoriesAsync(int take, CancellationToken cancellationToken)
+        public async Task<PaginationModel<List<RecipeCategoriesGetDto>>> GetRecipeCategoriesAsync(int skip, CancellationToken cancellationToken)
         {
-            var list = await _context.RecipeCategories.OrderByDescending(x=>x.Created).Take(take).ToListAsync(cancellationToken);
-            return _mapper.Map<List<RecipeCategoriesGetDto>>(list);
+            var list = await _context.RecipeCategories
+                .OrderByDescending(x=>x.Created)
+                .Skip(skip)
+                .Take(10).ToListAsync(cancellationToken);
+
+            var countAllRecipeCategories = _context.RecipeCategories.Count();
+
+            var data = _mapper.Map<List<RecipeCategoriesGetDto>>(list);
+
+            return new PaginationModel<List<RecipeCategoriesGetDto>>(data, countAllRecipeCategories);
         }
     }
 }

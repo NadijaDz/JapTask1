@@ -19,21 +19,6 @@ namespace NormativeCalculator.Infrastructure.Migrations
                 .HasAnnotation("ProductVersion", "5.0.12")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("IngredientsRecipes", b =>
-                {
-                    b.Property<int>("IngredientsId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("RecipesId")
-                        .HasColumnType("int");
-
-                    b.HasKey("IngredientsId", "RecipesId");
-
-                    b.HasIndex("RecipesId");
-
-                    b.ToTable("IngredientsRecipes");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
@@ -148,60 +133,6 @@ namespace NormativeCalculator.Infrastructure.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUser<int>", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("AccessFailedCount")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("EmailConfirmed")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("LockoutEnabled")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTimeOffset?>("LockoutEnd")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("NormalizedEmail")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NormalizedUserName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PasswordHash")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PhoneNumber")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("PhoneNumberConfirmed")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("SecurityStamp")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("TwoFactorEnabled")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("UserName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("IdentityUser<int>");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -488,85 +419,85 @@ namespace NormativeCalculator.Infrastructure.Migrations
                         {
                             Id = 1,
                             CategoryName = "Breakfast",
-                            Created = new DateTime(2021, 9, 22, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Created = new DateTime(2021, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 2,
                             CategoryName = "Lunch",
-                            Created = new DateTime(2021, 10, 20, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Created = new DateTime(2021, 9, 19, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 3,
                             CategoryName = "Dinner",
-                            Created = new DateTime(2021, 5, 3, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Created = new DateTime(2021, 5, 6, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 4,
                             CategoryName = "Snacks",
-                            Created = new DateTime(2021, 10, 20, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Created = new DateTime(2021, 6, 8, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 5,
                             CategoryName = "Salads",
-                            Created = new DateTime(2021, 4, 20, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Created = new DateTime(2021, 10, 23, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 6,
                             CategoryName = "Rice",
-                            Created = new DateTime(2021, 11, 20, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Created = new DateTime(2021, 9, 21, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 7,
                             CategoryName = "Pasta",
-                            Created = new DateTime(2021, 9, 24, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Created = new DateTime(2021, 8, 26, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 8,
                             CategoryName = "Chicken",
-                            Created = new DateTime(2021, 1, 8, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Created = new DateTime(2021, 3, 24, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 9,
                             CategoryName = "Vegetarian",
-                            Created = new DateTime(2021, 10, 19, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Created = new DateTime(2021, 6, 12, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 10,
                             CategoryName = "Meat",
-                            Created = new DateTime(2021, 8, 27, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Created = new DateTime(2021, 8, 8, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 11,
                             CategoryName = "Seafood",
-                            Created = new DateTime(2021, 9, 18, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Created = new DateTime(2021, 7, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 12,
                             CategoryName = "Desserts",
-                            Created = new DateTime(2021, 6, 24, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Created = new DateTime(2021, 2, 21, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 13,
                             CategoryName = "Drinks",
-                            Created = new DateTime(2021, 8, 16, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Created = new DateTime(2021, 2, 22, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 14,
                             CategoryName = "Burgers",
-                            Created = new DateTime(2021, 2, 22, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Created = new DateTime(2021, 8, 24, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
 
@@ -592,14 +523,14 @@ namespace NormativeCalculator.Infrastructure.Migrations
                     b.Property<decimal>("TotalCost")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int>("User_Id")
-                        .HasColumnType("int");
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("RecipeCategory_Id");
 
-                    b.HasIndex("User_Id");
+                    b.HasIndex("UserId");
 
                     b.ToTable("Recipes");
                 });
@@ -625,44 +556,6 @@ namespace NormativeCalculator.Infrastructure.Migrations
                     b.HasIndex("Recipe_Id");
 
                     b.ToTable("Recipes_Ingredients");
-                });
-
-            modelBuilder.Entity("NormativeCalculator.Database.Users", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("FirstName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("Users");
-                });
-
-            modelBuilder.Entity("IngredientsRecipes", b =>
-                {
-                    b.HasOne("NormativeCalculator.Database.Ingredients", null)
-                        .WithMany()
-                        .HasForeignKey("IngredientsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("NormativeCalculator.Database.Recipes", null)
-                        .WithMany()
-                        .HasForeignKey("RecipesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -735,11 +628,9 @@ namespace NormativeCalculator.Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("NormativeCalculator.Database.Users", "User")
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "User")
                         .WithMany()
-                        .HasForeignKey("User_Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("UserId");
 
                     b.Navigation("RecipeCategory");
 
@@ -749,7 +640,7 @@ namespace NormativeCalculator.Infrastructure.Migrations
             modelBuilder.Entity("NormativeCalculator.Database.Recipes_Ingredients", b =>
                 {
                     b.HasOne("NormativeCalculator.Database.Ingredients", "Ingredient")
-                        .WithMany()
+                        .WithMany("Recipes_Ingredients")
                         .HasForeignKey("Ingredient_Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -761,7 +652,7 @@ namespace NormativeCalculator.Infrastructure.Migrations
                         .IsRequired();
 
                     b.HasOne("NormativeCalculator.Database.Recipes", "Recipe")
-                        .WithMany()
+                        .WithMany("Recipes_Ingredients")
                         .HasForeignKey("Recipe_Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -773,15 +664,14 @@ namespace NormativeCalculator.Infrastructure.Migrations
                     b.Navigation("Recipe");
                 });
 
-            modelBuilder.Entity("NormativeCalculator.Database.Users", b =>
+            modelBuilder.Entity("NormativeCalculator.Database.Ingredients", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser<int>", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Navigation("Recipes_Ingredients");
+                });
 
-                    b.Navigation("User");
+            modelBuilder.Entity("NormativeCalculator.Database.Recipes", b =>
+                {
+                    b.Navigation("Recipes_Ingredients");
                 });
 #pragma warning restore 612, 618
         }

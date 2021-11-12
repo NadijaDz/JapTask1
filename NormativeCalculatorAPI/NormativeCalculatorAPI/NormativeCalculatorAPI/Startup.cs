@@ -1,4 +1,7 @@
 
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.OAuth;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -45,22 +48,27 @@ namespace NormativeCalculatorAPI
              .AddDefaultTokenProviders();
 
 
-            services.AddAuthentication().AddCookie()
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                     .AddGoogle(options =>
             {
-              IConfigurationSection googleAuthNSection =
+                  IConfigurationSection googleAuthNSection =
                   Configuration.GetSection("Authentication:Google");
 
               options.ClientId = googleAuthNSection["ClientId"];
               options.ClientSecret = googleAuthNSection["ClientSecret"];
+              options.Events = new OAuthEvents
+                {
+                    OnRemoteFailure = (RemoteFailureContext context) =>
+                    {
+                        context.Response.Redirect("/home/denied");
+                        context.HandleResponse();
+                        return Task.CompletedTask;
+                    }
+                };
             });
-            //services.ConfigureApplicationCookie(options =>
-            //  {
-            //      // Cookie settings
-            //      options.Cookie.HttpOnly = false;
-            //      options.ExpireTimeSpan = TimeSpan.FromMinutes(10);
-
-            //  });
+            services.Configure<DataProtectionTokenProviderOptions>(o =>
+                o.TokenLifespan = TimeSpan.FromHours(3)
+            );
 
             // ===== Configure Identity =======
             services.ConfigureApplicationCookie(options =>
@@ -78,6 +86,7 @@ namespace NormativeCalculatorAPI
                 };
             });
 
+            
 
         }
 
@@ -92,7 +101,7 @@ namespace NormativeCalculatorAPI
             }
 
             app.UseHttpsRedirection();
-
+         
             app.UseRouting();
 
             app.UseCors(x => x

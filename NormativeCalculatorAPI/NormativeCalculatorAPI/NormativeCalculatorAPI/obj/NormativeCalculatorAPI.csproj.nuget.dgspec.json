@@ -107,7 +107,11 @@
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Nadija\\Desktop\\JAP Task 1\\NormativeCalculatorAPI\\NormativeCalculatorAPI\\NormativeCalculator.Database\\NormativeCalculator.Database.csproj": {
+                "projectPath": "C:\\Users\\Nadija\\Desktop\\JAP Task 1\\NormativeCalculatorAPI\\NormativeCalculatorAPI\\NormativeCalculator.Database\\NormativeCalculator.Database.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -280,6 +284,14 @@
             "Microsoft.AspNetCore.Authentication.Google": {
               "target": "Package",
               "version": "[5.0.12, )"
+            },
+            "Microsoft.AspNetCore.Http": {
+              "target": "Package",
+              "version": "[2.2.2, )"
+            },
+            "Microsoft.AspNetCore.Session": {
+              "target": "Package",
+              "version": "[2.2.0, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",

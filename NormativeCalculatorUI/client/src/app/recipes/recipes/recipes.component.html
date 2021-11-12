@@ -1,1 +1,33 @@
-<p>recipes works!</p>
+<div class="container" style="margin-top: 100px;">
+    <h1>Recipes</h1>
+    <div style="float:right">
+      <!-- <input type="text" #filterValue (keyup)="searchByFiltrer(filterValue.value)" placeholder="Search"> -->
+      <input type="text"  [(ngModel)]="filterValue" (input)="searchByFiltrer(filterValue)" placeholder="Search">
+
+      <button class="ml-3" type="button">Add new recipe</button>
+    </div>
+
+
+    <table class="table table-striped">
+     <thead>
+     <tr>
+       <th scope="col">Name</th>
+       <th scope="col">Total cost recipe</th>
+       <th scope="col">Description</th>
+
+       <th scope="col"></th>
+
+     </tr>
+     </thead>
+     <tbody>
+     <tr *ngFor="let recipe of recipes" >
+       <td>{{recipe.name}}</td>
+       <td>cost</td>
+       <td>{{recipe.description}}</td>
+
+     </tr>
+     </tbody>
+   </table>
+   <button type="button" (click)="loadMore()" [disabled]="!isLodaMore">Load more</button>
+  </div>
+ 

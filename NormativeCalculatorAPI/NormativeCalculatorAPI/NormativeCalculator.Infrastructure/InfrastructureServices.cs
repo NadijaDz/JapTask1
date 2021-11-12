@@ -16,6 +16,7 @@ namespace NormativeCalculatorAPI
 
 
             services.AddScoped<IRecipeCategoriesService, RecipeCategoriesService>();
+            services.AddScoped<IRecipesService, RecipesService>();
 
             services.AddAutoMapper(typeof(NormativeCalculatorProfile).Assembly);
 

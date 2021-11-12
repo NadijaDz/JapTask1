@@ -72,3 +72,4 @@ C:\Users\Nadija\Desktop\JAP Task 1\NormativeCalculatorAPI\NormativeCalculatorAPI
 C:\Users\Nadija\Desktop\JAP Task 1\NormativeCalculatorAPI\NormativeCalculatorAPI\NormativeCalculatorAPI\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\Nadija\Desktop\JAP Task 1\NormativeCalculatorAPI\NormativeCalculatorAPI\NormativeCalculatorAPI\bin\Debug\net5.0\NormativeCalculator.DTOs.dll
 C:\Users\Nadija\Desktop\JAP Task 1\NormativeCalculatorAPI\NormativeCalculatorAPI\NormativeCalculatorAPI\bin\Debug\net5.0\NormativeCalculator.DTOs.pdb
+C:\Users\Nadija\Desktop\JAP Task 1\NormativeCalculatorAPI\NormativeCalculatorAPI\NormativeCalculatorAPI\obj\Debug\net5.0\NormativeCalculatorAPI.csproj.CopyComplete
