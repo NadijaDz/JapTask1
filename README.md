@@ -10,12 +10,13 @@ After that, start the project with (F5, ctrl F5). That project is API and on the
 installing workspace npm dependencies:
 
 
-npm install
+  npm install
 
 
 -After the installation of all required npm dependency packages, for starting application in the same Terminal type command:
 
-ng serve
+
+  ng serve
 
 
 -It will provide URL: http://localhost:4200/ copy that URL and past it into a new tab in Browser
