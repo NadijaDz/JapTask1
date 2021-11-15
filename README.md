@@ -28,7 +28,7 @@ installing workspace npm dependencies:
 About application
 
 -This is application for calculated  price for ingredients of recipe. When user is logged, on initial screen can see all categories of recipes.
--User can click on special category, and when click, will see new page with all recipes of selected category. On this page you can search recipes
+-User can click on category, and when click, will see new page with all recipes of selected category. On this page you can search recipes
  by recipe name, recipe description and ingredient name. Also you can add new recipe on selected category, and can add attribute for recipe like:
 name, description, ingredient with selected ingredient name, entered quantity of ingredient, and selected measure unit. 
 Application immediately calculated all entered value for ingredient and show how new recipe will be cost. 
