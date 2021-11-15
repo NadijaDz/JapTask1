@@ -19,4 +19,18 @@ export class RecipesService {
          withCredentials: true
     } );
   }
+
+  save(order: any) {
+    return this.http.post(`${environment.apiUrl}${this.endpoint}`, order,{
+      withCredentials: true
+    });
+  }
+
+  getById(id: string) {
+    return this.http.get(`${environment.apiUrl}${this.endpoint}/${id}`,{
+      withCredentials: true
+    });
+  }
+
+
 }

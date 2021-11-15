@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
 import { first } from 'rxjs/operators';
 import { RecipesService } from 'src/app/services/recipes.service';
+import { RecipeDetailComponent } from '../recipe-details/recipe-detail/recipe-detail.component';
 
 @Component({
   selector: 'app-recipes',
@@ -16,11 +18,17 @@ export class RecipesComponent implements OnInit {
   isLodaMore:boolean=true;
   filterValue:string="";
   tempRecipes:any=[];
+  nameofCategory:string;
+  ingredients:any=[];
 
-  constructor(private recipesService: RecipesService,  private router: Router, private route: ActivatedRoute) { }
+
+
+  constructor(private recipesService: RecipesService,  private router: Router, private route: ActivatedRoute,
+    private modalService: NgbModal) { }
 
   ngOnInit() {
     this.categoryId =this.route.snapshot.paramMap.get('id');
+    this.nameofCategory =this.route.snapshot.paramMap.get('name');
     this.getRecipes();
   }
 
@@ -58,12 +66,27 @@ searchByFiltrer(filterValue){
     this.filterValue = filterValue;
     this.getRecipes();
   }
-
-
-
    this.recipes=this.tempRecipes;
- 
-  
+}
+addNewRecipe() {
+  this.router.navigate(['./add-recipe'], {relativeTo: this.route, skipLocationChange:false});
+}
+
+getRecipeDetails(id){
+  this.recipesService.getById(id).pipe(first()).subscribe(
+    (response:any)=>{
+
+      const modalRef = this.modalService.open(RecipeDetailComponent,
+        {
+          scrollable: true,
+          size:'lg'
+        });
+    modalRef.componentInstance.fromParent=response;
+    modalRef.result.then((result) => {
+
+    }, (reason) => {
+    });
+    });
 }
 
 }

@@ -11,7 +11,7 @@
     <tbody>
     <tr *ngFor="let categories of recipeCategories">
       <td>{{categories.categoryName}}</td>
-      <td > <button [routerLink]="['/recipes/', categories.id]">View Recipes</button> </td> 
+      <td > <button [routerLink]="['/recipes/', categories.id, categories.categoryName]">View Recipes</button> </td> 
 
     </tr>
     </tbody>

@@ -17,6 +17,4 @@ export class LoginService {
     return this.http.get<any[]>(`${environment.apiUrl}` + this.endpoint + "/signin-google",{ withCredentials: true});
   }
 
-
-
 }

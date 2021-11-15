@@ -419,85 +419,85 @@ namespace NormativeCalculator.Infrastructure.Migrations
                         {
                             Id = 1,
                             CategoryName = "Breakfast",
-                            Created = new DateTime(2021, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Created = new DateTime(2021, 9, 21, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 2,
                             CategoryName = "Lunch",
-                            Created = new DateTime(2021, 9, 19, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Created = new DateTime(2021, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 3,
                             CategoryName = "Dinner",
-                            Created = new DateTime(2021, 5, 6, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Created = new DateTime(2021, 9, 14, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 4,
                             CategoryName = "Snacks",
-                            Created = new DateTime(2021, 6, 8, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Created = new DateTime(2021, 3, 22, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 5,
                             CategoryName = "Salads",
-                            Created = new DateTime(2021, 10, 23, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Created = new DateTime(2021, 8, 24, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 6,
                             CategoryName = "Rice",
-                            Created = new DateTime(2021, 9, 21, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Created = new DateTime(2021, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 7,
                             CategoryName = "Pasta",
-                            Created = new DateTime(2021, 8, 26, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Created = new DateTime(2021, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 8,
                             CategoryName = "Chicken",
-                            Created = new DateTime(2021, 3, 24, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Created = new DateTime(2021, 6, 4, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 9,
                             CategoryName = "Vegetarian",
-                            Created = new DateTime(2021, 6, 12, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Created = new DateTime(2021, 9, 7, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 10,
                             CategoryName = "Meat",
-                            Created = new DateTime(2021, 8, 8, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Created = new DateTime(2021, 7, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 11,
                             CategoryName = "Seafood",
-                            Created = new DateTime(2021, 7, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Created = new DateTime(2021, 5, 26, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 12,
                             CategoryName = "Desserts",
-                            Created = new DateTime(2021, 2, 21, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Created = new DateTime(2021, 1, 7, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 13,
                             CategoryName = "Drinks",
-                            Created = new DateTime(2021, 2, 22, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Created = new DateTime(2021, 9, 20, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 14,
                             CategoryName = "Burgers",
-                            Created = new DateTime(2021, 8, 24, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Created = new DateTime(2021, 7, 19, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
 
@@ -519,9 +519,6 @@ namespace NormativeCalculator.Infrastructure.Migrations
 
                     b.Property<int>("RecipeCategory_Id")
                         .HasColumnType("int");
-
-                    b.Property<decimal>("TotalCost")
-                        .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)");

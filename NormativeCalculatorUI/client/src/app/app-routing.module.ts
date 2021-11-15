@@ -4,6 +4,7 @@ import { AuthGuard } from './authGuard/auth.guard';
 import { HomeComponent } from './home/home/home.component';
 import { IngredientsComponent } from './ingredients/ingredients/ingredients.component';
 import { LoginComponent } from './login/login/login.component';
+import { AddRecipeComponent } from './recipes/addRecipe/add-recipe/add-recipe.component';
 import { RecipesComponent } from './recipes/recipes/recipes.component';
 import { RecipeCategoriesComponent } from './recipe_categories/recipe-categories/recipe-categories.component';
 
@@ -15,10 +16,11 @@ const routes: Routes = [
     runGuardsAndResolvers:'always',
     canActivate: [AuthGuard],
     children:[
-    // {path:'', component: HomeComponent},
+    {path:'', component: RecipeCategoriesComponent},
     {path:'ingredients', component: IngredientsComponent},
-    {path:'recipes/:id', component: RecipesComponent,},
-    {path:'recipeCategories', component: RecipeCategoriesComponent}
+    {path:'recipes/:id/:name', component: RecipesComponent},
+    {path:'recipeCategories', component: RecipeCategoriesComponent},
+    {path:'recipes/:id/:name/add-recipe', component: AddRecipeComponent}
     ]},
     {path:'**', component: LoginComponent, pathMatch:'full'},
 

@@ -11,9 +11,13 @@ import { IngredientsComponent } from './ingredients/ingredients/ingredients.comp
 import { RecipeCategoriesComponent } from './recipe_categories/recipe-categories/recipe-categories.component';
 import { HomeComponent } from './home/home/home.component';
 import { CookieService } from 'ngx-cookie-service';
-import { FormsModule } from '@angular/forms';
-
-
+import { AddRecipeComponent } from './recipes/addRecipe/add-recipe/add-recipe.component';
+import { AddIngredientsComponent } from './ingredients/add-ingredients/add-ingredients.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ToastrModule } from 'ngx-toastr';
+import { RecipeDetailComponent } from './recipes/recipe-details/recipe-detail/recipe-detail.component';
 
 @NgModule({
   declarations: [
@@ -23,14 +27,28 @@ import { FormsModule } from '@angular/forms';
     RecipesComponent,
     IngredientsComponent,
     RecipeCategoriesComponent,
-    HomeComponent
+    HomeComponent,
+    AddRecipeComponent,
+    AddIngredientsComponent,
+    RecipeDetailComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    FormsModule
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgbModule,
+    ToastrModule.forRoot({
+      timeOut: 3000,
+      positionClass: "toast-top-right",
+      preventDuplicates: true,
+      closeButton: true,
+    }),
+
+
   ],
   providers: [
     CookieService

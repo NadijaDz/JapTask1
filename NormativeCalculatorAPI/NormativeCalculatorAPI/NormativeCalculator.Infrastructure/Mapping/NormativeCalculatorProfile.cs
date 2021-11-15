@@ -11,8 +11,11 @@ namespace NormativeCalculator.Infrastructure.Mapping
 
             CreateMap<RecipeCategories, RecipeCategoriesGetDto>();
             CreateMap<Recipes, RecipesGetDto>();
-
-
+            CreateMap<Recipes, RecipesInsertGetDto>();
+            CreateMap<Ingredients, IngredientsGetDto>();
+            CreateMap<Ingredients, IngredientAddRequest>().ReverseMap();
+            CreateMap<MeasureUnits, MeasureUnitGetDto>();
+            CreateMap<Recipes, RecipesAddRequest>().ReverseMap();
 
         }
     }

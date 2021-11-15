@@ -17,6 +17,13 @@ namespace NormativeCalculatorAPI
 
             services.AddScoped<IRecipeCategoriesService, RecipeCategoriesService>();
             services.AddScoped<IRecipesService, RecipesService>();
+            services.AddScoped<IIngredientsService, IngredientsService>();
+            services.AddScoped<IMeasureUnitService, MeasureUnitService>();
+            services.AddScoped<ICalculatedPriceService, CalculatedPriceService>();
+
+
+
+
 
             services.AddAutoMapper(typeof(NormativeCalculatorProfile).Assembly);
 

@@ -18,8 +18,6 @@ namespace NormativeCalculator.Database
 
         public string Description { get; set; }
 
-        public decimal TotalCost { get; set; }
-
         public DateTime Created { get; set; }
 
         [ForeignKey("RecipeCategory_Id")]

@@ -1,0 +1,79 @@
+
+<div class="container" style="margin-top: 100px;">
+  <h1>Add new recipe in category {{nameofCategory}}</h1>
+
+<form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+ 
+  <div class="form-group">
+      <label for="name">*Name</label>
+       <input type="text" id="name" name="name" formControlName="name" class="form-control" 
+       [ngClass]="{ 'is-invalid':form.name.touched && form.name.errors }">
+      <div *ngIf="form.name.errors" class="invalid-feedback">
+        <div *ngIf="form.name.errors.required">Name is required</div>
+      </div>  
+    </div>
+   
+    <div class="form-group">
+      <label for="description">*Description</label>
+      <textarea type="text" id="description" name="description" rows="5" formControlName="description" class="form-control"
+      [ngClass]="{ 'is-invalid':form.description.touched && form.description.errors }"></textarea>
+      <div *ngIf="form.description.errors" class="invalid-feedback">
+        <div *ngIf="form.description.errors.required">Description is required</div>
+      </div>
+    </div>
+   
+    <div class="form-group scroll-div">
+      <div class="col-xs-12" formArrayName="ingredients">
+        <div class="row ing-row mr-0 ml-0"  *ngFor="let ingredientCtrl of addIngredientInForm(); let i = index" [formGroupName]="i">
+          <div class="col-xs-4">
+            <select id="ingredient_Id" name="ingredient_Id"  formControlName="ingredient_Id" class="form-control" 
+            (change)="totalCostPerIngredient(i);changeMeasureUnit(i)"
+           >
+              <option value="Choose ingredients for recipe"></option>
+              <option [ngValue]="j.id" *ngFor="let j of ingredients">
+                {{j.name}}
+              </option> 
+            </select>
+          </div>
+    
+          <div class="col-xs-2  ml-3">
+            <input type="number" class="form-control" formControlName='unitQuantity' min="0.1" step="0.1" (change)="totalCostPerIngredient(i)">
+          </div>
+          <div class="col-xs-2 ml-3">
+            <select id="measureUnit_Id" name="measureUnit_Id"  formControlName="measureUnit_Id" class="form-control custom-disabled" (change)="totalCostPerIngredient(i)" >
+              <option value="Choose measure unit for ingredient"></option>
+              <option [ngValue]="m.id" *ngFor="let m of measureUnits" [disabled]="m.isDisabled">
+                {{m.measureUnit}}
+              </option> 
+            </select>
+          </div>
+ 
+          <div class="col-xs-2  ml-3" style="    display: flex; align-items: center;">
+            Cost: 
+           <input type="number" class="form-control" formControlName='costIngredient' readonly>  KM  
+          </div>
+         
+          <div class="col-xs-2 ml-3">
+            <button type="button" class="btn btn-danger" (click)="deleteIngredient(i)">X</button>
+          </div>
+        </div>
+        <hr />
+        <label>Total cost for this recipe is: <strong> {{totalCost}} KM </strong></label>
+        <hr />
+      </div>
+     
+    </div> 
+
+    <div class="form-group">
+      <button type="button" class="btn btn-primary add-ing" (click)="addNewIngredient()">*Add ingredient to recipe </button>
+      <button type="button" class="btn btn-success ml-3" (click)="open()">Add new ingredient </button>
+    </div>
+   
+    <div class="form-group" style="float:right">
+      <button type="submit" class="btn btn-secondary">Cancel</button>
+      <button type="submit" class="btn btn-success ml-3"  [disabled]="!recipeForm.valid">Submit</button>
+    </div>
+   
+  </form>
+</div>
+

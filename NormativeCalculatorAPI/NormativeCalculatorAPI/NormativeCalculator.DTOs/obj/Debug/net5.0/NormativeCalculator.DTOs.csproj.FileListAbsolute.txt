@@ -12,4 +12,3 @@ C:\Users\Nadija\Desktop\JAP Task 1\NormativeCalculatorAPI\NormativeCalculatorAPI
 C:\Users\Nadija\Desktop\JAP Task 1\NormativeCalculatorAPI\NormativeCalculatorAPI\NormativeCalculator.DTOs\obj\Debug\net5.0\NormativeCalculator.DTOs.pdb
 C:\Users\Nadija\Desktop\JAP Task 1\NormativeCalculatorAPI\NormativeCalculatorAPI\NormativeCalculator.DTOs\bin\Debug\net5.0\NormativeCalculator.Database.dll
 C:\Users\Nadija\Desktop\JAP Task 1\NormativeCalculatorAPI\NormativeCalculatorAPI\NormativeCalculator.DTOs\bin\Debug\net5.0\NormativeCalculator.Database.pdb
-C:\Users\Nadija\Desktop\JAP Task 1\NormativeCalculatorAPI\NormativeCalculatorAPI\NormativeCalculator.DTOs\obj\Debug\net5.0\NormativeCalculator.DTOs.csproj.CopyComplete

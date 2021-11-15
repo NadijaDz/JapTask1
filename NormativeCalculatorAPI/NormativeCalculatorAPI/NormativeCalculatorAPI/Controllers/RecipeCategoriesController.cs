@@ -12,10 +12,10 @@ namespace NormativeCalculatorAPI.Controllers
     [ApiController]
     public class RecipeCategoriesController : ControllerBase
     {
-        private readonly IRecipeCategoriesService _recipeCategories;
+        private readonly IRecipeCategoriesService _recipeCategoriesService;
         public RecipeCategoriesController(IRecipeCategoriesService recipeCategories)
         {
-            _recipeCategories = recipeCategories;
+            _recipeCategoriesService = recipeCategories;
         }
 
         [Authorize]
@@ -25,7 +25,7 @@ namespace NormativeCalculatorAPI.Controllers
         {
             try
             {
-                return Ok(await _recipeCategories.GetRecipeCategoriesAsync(skip, cancellationToken));
+                return Ok(await _recipeCategoriesService.GetRecipeCategoriesAsync(skip, cancellationToken));
             }
             catch (Exception ex)
             {

@@ -14,6 +14,7 @@ using Microsoft.OpenApi.Models;
 using NormativeCalculator.Infrastructure.EF;
 using NormativeCalculator.Infrastructure.Extensions;
 using System;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace NormativeCalculatorAPI
@@ -32,6 +33,9 @@ namespace NormativeCalculatorAPI
         {
 
             services.AddControllers();
+
+
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "NormativeCalculatorAPI", Version = "v1" });
@@ -86,7 +90,7 @@ namespace NormativeCalculatorAPI
                 };
             });
 
-            
+        
 
         }
 
