@@ -3,6 +3,7 @@
 Usage Normative Calculator Application
 
 -You need to do the few things listed below before you can properly start the application.
+
 -After you cloned the project, open the folder “NormativeCalculatorAPI ”, open the .sln , and in Package Manager Console type “update-database” to seed data into a database. 
 After that, start the project with (F5, ctrl F5). That project is API and on the startup, it will be Swagger with implemented endpoints ready for testing and use.
 
