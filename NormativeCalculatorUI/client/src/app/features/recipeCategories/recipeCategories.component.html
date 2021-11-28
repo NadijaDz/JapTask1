@@ -1,0 +1,20 @@
+<div class="container" style="margin-top: 100px;">
+  <h1>Recipe Categories</h1>
+  
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Recipe Category</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let categories of recipeCategories">
+        <td>{{categories.categoryName}}</td>
+        <td> <button [routerLink]="['/recipes/', categories.id, categories.categoryName]">View Recipes</button> </td>
+
+      </tr>
+    </tbody>
+  </table>
+  <button type="button" (click)="loadMore()" [disabled]="!isLodaMore">Load more</button>
+</div>

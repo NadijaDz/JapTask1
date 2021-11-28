@@ -1,0 +1,17 @@
+
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" *ngIf="isUserLoggedIn">
+    <div class="container">
+      <a class="navbar-brand" routerLink='/' routerLinkActive='active'>Normative Calculator</a>
+        <ul class="navbar-nav"> 
+            <ng-container> 
+              <li class="nav-item">
+              <a class="nav-link"  routerLink='/recipeCategories' routerLinkActive='active'>Recipe Categories</a>
+            </li>
+        
+            <li class="nav-item ml-4">
+                <a class="nav-link"  (click)="logout()" routerLinkActive='active'>Logout</a>
+              </li>
+          </ng-container>
+        </ul>
+    </div>
+  </nav>
