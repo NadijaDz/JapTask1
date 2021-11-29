@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using NormativeCalculator.Common.Enums;
 using NormativeCalculator.Core;
 using NormativeCalculator.Core.Helper;
 using NormativeCalculator.Core.Models.DTOs;
@@ -12,7 +11,6 @@ using NormativeCalculator.Database;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Claims;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -63,8 +61,8 @@ namespace NormativeCalculator.Services
 
                 }).FirstOrDefaultAsync();
 
-             recipe.TotalCost = recipe.RecipeIngredient.Sum(x => x.CostOfIngredient);
-     
+            recipe.TotalCost = recipe.RecipeIngredient.Sum(x => x.CostOfIngredient);
+
             return recipe;
         }
 
@@ -73,7 +71,7 @@ namespace NormativeCalculator.Services
 
 
 
-            var list = await _context.Recipes.Include(r=>r.RecipesIngredients).ThenInclude(i=>i.Ingredient)
+            var list = await _context.Recipes.Include(r => r.RecipesIngredients).ThenInclude(i => i.Ingredient)
                .Where(x => x.RecipeCategory_Id == request.CategoryId)
                .Where(s => (string.IsNullOrWhiteSpace(request.SearchQuery)) ||
                    s.Name.ToLower().Trim().StartsWith(request.SearchQuery.ToLower().Trim()) ||
@@ -123,9 +121,7 @@ namespace NormativeCalculator.Services
                         {
                             Recipe_Id = entity.Id,
                             Ingredient_Id = ingredient.Ingredient_Id,
-                            //MeasureUnit=(MeasureUnit)ingredient.MeasureUnit,
-                            MeasureUnit=ingredient.MeasureUnit,
-                            //MeasureUnit=(MeasureUnit)5,
+                            MeasureUnit = ingredient.MeasureUnit,
                             UnitQuantity = ingredient.UnitQuantity
 
                         }

@@ -6777,11 +6777,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Nadija\\Desktop\\japtask\\JapTask1\\NormativeCalculatorAPI\\NormativeCalculatorAPI\\NormativeCalculator.Database\\NormativeCalculator.Database.csproj",
+      "projectUniqueName": "C:\\Users\\Nadija\\Desktop\\japtask1\\JapTask1\\NormativeCalculatorAPI\\NormativeCalculatorAPI\\NormativeCalculator.Database\\NormativeCalculator.Database.csproj",
       "projectName": "NormativeCalculator.Database",
-      "projectPath": "C:\\Users\\Nadija\\Desktop\\japtask\\JapTask1\\NormativeCalculatorAPI\\NormativeCalculatorAPI\\NormativeCalculator.Database\\NormativeCalculator.Database.csproj",
+      "projectPath": "C:\\Users\\Nadija\\Desktop\\japtask1\\JapTask1\\NormativeCalculatorAPI\\NormativeCalculatorAPI\\NormativeCalculator.Database\\NormativeCalculator.Database.csproj",
       "packagesPath": "C:\\Users\\Nadija\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Nadija\\Desktop\\japtask\\JapTask1\\NormativeCalculatorAPI\\NormativeCalculatorAPI\\NormativeCalculator.Database\\obj\\",
+      "outputPath": "C:\\Users\\Nadija\\Desktop\\japtask1\\JapTask1\\NormativeCalculatorAPI\\NormativeCalculatorAPI\\NormativeCalculator.Database\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -6805,8 +6805,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\Nadija\\Desktop\\japtask\\JapTask1\\NormativeCalculatorAPI\\NormativeCalculatorAPI\\NormativeCalculator.Core\\NormativeCalculator.Core.csproj": {
-              "projectPath": "C:\\Users\\Nadija\\Desktop\\japtask\\JapTask1\\NormativeCalculatorAPI\\NormativeCalculatorAPI\\NormativeCalculator.Core\\NormativeCalculator.Core.csproj"
+            "C:\\Users\\Nadija\\Desktop\\japtask1\\JapTask1\\NormativeCalculatorAPI\\NormativeCalculatorAPI\\NormativeCalculator.Core\\NormativeCalculator.Core.csproj": {
+              "projectPath": "C:\\Users\\Nadija\\Desktop\\japtask1\\JapTask1\\NormativeCalculatorAPI\\NormativeCalculatorAPI\\NormativeCalculator.Core\\NormativeCalculator.Core.csproj"
             }
           }
         }
