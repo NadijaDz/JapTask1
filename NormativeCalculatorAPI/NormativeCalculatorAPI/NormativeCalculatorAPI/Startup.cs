@@ -1,21 +1,10 @@
-
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Authentication.OAuth;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.OpenApi.Models;
-using NormativeCalculator.Infrastructure.EF;
-using NormativeCalculator.Infrastructure.Extensions;
+using NormativeCalculator.API.Extensions;
 using System;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
 
 namespace NormativeCalculatorAPI
 {
@@ -33,64 +22,13 @@ namespace NormativeCalculatorAPI
         {
 
             services.AddControllers();
-
-
-
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "NormativeCalculatorAPI", Version = "v1" });
-            });
-
-            services.AddDbContext<NormativeCalculatorDBContext>(options =>
-                     options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-
-            services.RegisterInfrastructureServices(Configuration);
-
-           
-            services.AddIdentity< IdentityUser, IdentityRole >()
-             .AddEntityFrameworkStores<NormativeCalculatorDBContext>()
-             .AddDefaultTokenProviders();
-
-
-            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-                    .AddGoogle(options =>
-            {
-                  IConfigurationSection googleAuthNSection =
-                  Configuration.GetSection("Authentication:Google");
-
-              options.ClientId = googleAuthNSection["ClientId"];
-              options.ClientSecret = googleAuthNSection["ClientSecret"];
-              options.Events = new OAuthEvents
-                {
-                    OnRemoteFailure = (RemoteFailureContext context) =>
-                    {
-                        context.Response.Redirect("/home/denied");
-                        context.HandleResponse();
-                        return Task.CompletedTask;
-                    }
-                };
-            });
-            services.Configure<DataProtectionTokenProviderOptions>(o =>
-                o.TokenLifespan = TimeSpan.FromHours(3)
-            );
-
-            // ===== Configure Identity =======
-            services.ConfigureApplicationCookie(options =>
-            {
-                options.Cookie.Name = "auth_cookie";
-                options.Cookie.SameSite = SameSiteMode.None;
-                options.LoginPath = new PathString("/api/Login/signin-google");
-                options.AccessDeniedPath = new PathString("/api/contests");
-                options.Cookie.HttpOnly = false;
-
-                options.Events.OnRedirectToLogin = context =>
-                {
-                    context.Response.StatusCode = StatusCodes.Status401Unauthorized;
-                    return Task.CompletedTask;
-                };
-            });
-
-        
+            services.RegisterDbContextConfiguration(Configuration);
+            services.RegisterSwaggerConfiguration(Configuration);
+            services.RegisterDIConfiguration(Configuration);
+            services.RegisterAuthenticationConfiguration(Configuration);
+            services.RegisterAutoMapperConfiguration(Configuration);
+            services.RegisterCookieConfiguration(Configuration);
+            services.RegisterIdentityConfiguration(Configuration);
 
         }
 

@@ -38,11 +38,11 @@ namespace NormativeCalculatorAPI.Controllers
             return Challenge(properties, provider);
         }
 
-      
+
         [HttpGet("external-callback")]
         public async Task<IActionResult> ExternalLoginCallback(string returnUrl = null, string remoteError = null)
         {
-         
+
             ExternalLoginInfo info = await _signInManager.GetExternalLoginInfoAsync();
 
             if (info == null) return new RedirectResult($"{returnUrl}?error=externalsigninerror");
@@ -53,7 +53,7 @@ namespace NormativeCalculatorAPI.Controllers
 
             if (result.Succeeded)
             {
-               return Redirect(returnUrl);
+                return Redirect(returnUrl);
             }
 
             if (result.IsLockedOut)
@@ -73,7 +73,7 @@ namespace NormativeCalculatorAPI.Controllers
                 {
                     Email = email,
                     UserName = name
-                   
+
                 };
                 var resultCreateUser = await _userManager.CreateAsync(user);
                 if (resultCreateUser.Succeeded)
@@ -81,19 +81,17 @@ namespace NormativeCalculatorAPI.Controllers
                     resultCreateUser = await _userManager.AddLoginAsync(user, info);
                     if (resultCreateUser.Succeeded)
                     {
-                       
+
                         return Redirect(returnUrl);
                     }
                 }
                 return Unauthorized();
-          
+
             }
         }
 
-
         [HttpGet("signout-google")]
         [Authorize]
-
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();

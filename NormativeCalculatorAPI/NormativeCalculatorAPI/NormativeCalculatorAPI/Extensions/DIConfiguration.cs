@@ -10,7 +10,7 @@ namespace NormativeCalculator.API.Extensions
         {
             services.AddHttpContextAccessor();
             services.AddScoped<IRecipeCategoryService, RecipeCategoryService>();
-            services.AddScoped<IRecipesService, RecipeService>();
+            services.AddScoped<IRecipeService, RecipeService>();
             services.AddScoped<IIngredientService, IngredientService>();
 
             return services;

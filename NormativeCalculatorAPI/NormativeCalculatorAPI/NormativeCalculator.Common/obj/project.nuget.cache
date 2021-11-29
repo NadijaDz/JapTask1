@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Cih1tZOm5A45KXrpyyXBkOzqjHMLMRUEKipQRWC+DV2WgJt52f3bR2jGAYhmMRK34SSZ3o8OjsM6V1Ns8sABtg==",
+  "dgSpecHash": "oe2PaLP88suxnTdvKvtZGCxok+sOHVuO1/q9mCpEfTFyD4/+M1mdwPDSJDd5Fn9RWrwbtBGPNFHE8L7tdd3C/A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Nadija\\Desktop\\JAP Task 1\\NormativeCalculatorAPI\\NormativeCalculatorAPI\\NormativeCalculator.Common\\NormativeCalculator.Common.csproj",
+  "projectFilePath": "C:\\Users\\Nadija\\Desktop\\japtask\\JapTask1\\NormativeCalculatorAPI\\NormativeCalculatorAPI\\NormativeCalculator.Common\\NormativeCalculator.Common.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthGuard } from './authGuard/auth.guard';
-import { HomeComponent } from './home/home/home.component';
-import { IngredientsComponent } from './ingredients/ingredients/ingredients.component';
-import { LoginComponent } from './login/login/login.component';
-import { AddRecipeComponent } from './recipes/addRecipe/add-recipe/add-recipe.component';
-import { RecipesComponent } from './recipes/recipes/recipes.component';
-import { RecipeCategoriesComponent } from './recipe_categories/recipe-categories/recipe-categories.component';
+import { AuthGuard } from './core/authGuard/auth.guard';
+import { IngredientsComponent } from './features/ingredients/ingredients.component';
+import { LoginComponent } from './features/login/login/login.component';
+import { RecipeCategoriesComponent } from './features/recipeCategories/recipeCategories.component';
+import { AddRecipeComponent } from './features/recipes/addRecipe/add-recipe/add-recipe.component';
+import { RecipesComponent } from './features/recipes/recipes.component';
 
 const routes: Routes = [
 
@@ -23,9 +22,8 @@ const routes: Routes = [
     {path:'recipes/:id/:name/add-recipe', component: AddRecipeComponent}
     ]},
     {path:'**', component: LoginComponent, pathMatch:'full'},
-
+    
 ];
-
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

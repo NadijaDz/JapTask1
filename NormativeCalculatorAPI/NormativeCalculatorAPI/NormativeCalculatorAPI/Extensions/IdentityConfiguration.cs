@@ -15,9 +15,9 @@ namespace NormativeCalculator.API.Extensions
                     .AddEntityFrameworkStores<NormativeCalculatorDBContext>()
                     .AddDefaultTokenProviders();
 
-           // services.Configure<DataProtectionTokenProviderOptions>(o =>
-           //    o.TokenLifespan = TimeSpan.FromHours(3)
-           //);
+            services.Configure<DataProtectionTokenProviderOptions>(o =>
+               o.TokenLifespan = TimeSpan.FromHours(3)
+           );
 
             return services;
         }

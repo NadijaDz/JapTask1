@@ -18,14 +18,14 @@ using System.Threading.Tasks;
 
 namespace NormativeCalculator.Services
 {
-    public interface IRecipesService
+    public interface IRecipeService
     {
         Task<GetRecipesDto> GetRecipeByIdAsync(int id, CancellationToken cancellationToken);
         Task<PaginationResponse<List<GetRecipesResponse>>> GetRecipesAsync(RecipeSearchRequest request, CancellationToken cancellationToken);
         Task<GetRecipesResponse> InsertRecipeAsync(AddRecipeRequest request, CancellationToken cancellationToken);
     }
 
-    public class RecipeService : IRecipesService
+    public class RecipeService : IRecipeService
     {
         private readonly NormativeCalculatorDBContext _context;
         protected readonly IMapper _mapper;

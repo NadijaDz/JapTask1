@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = NormativeCalculator.Mapper
-build_property.ProjectDir = C:\Users\Nadija\Desktop\JAP Task 1\NormativeCalculatorAPI\NormativeCalculatorAPI\NormativeCalculator.Mapper\
+build_property.ProjectDir = C:\Users\Nadija\Desktop\japtask\JapTask1\NormativeCalculatorAPI\NormativeCalculatorAPI\NormativeCalculator.Mapper\
