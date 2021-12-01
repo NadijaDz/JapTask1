@@ -10,7 +10,7 @@ namespace NormativeCalculator.Core.Entities
 
         public DateTime CreatedAt { get; set; }
 
-        public bool? IsDeleted { get; set; }
+        public bool IsDeleted { get; set; }
 
     }
 }

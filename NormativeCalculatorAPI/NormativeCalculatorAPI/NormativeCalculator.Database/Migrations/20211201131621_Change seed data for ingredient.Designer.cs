@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NormativeCalculator.Database;
 
 namespace NormativeCalculator.Infrastructure.Migrations
 {
     [DbContext(typeof(NormativeCalculatorDBContext))]
-    partial class NormativeCalculatorDBContextModelSnapshot : ModelSnapshot
+    [Migration("20211201131621_Change seed data for ingredient")]
+    partial class Changeseeddataforingredient
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

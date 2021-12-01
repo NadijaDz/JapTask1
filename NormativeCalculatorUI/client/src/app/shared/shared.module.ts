@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavComponent } from './nav/nav.component';
+import { AppRoutingModule } from '../app-routing.module';
 
 @NgModule({
   declarations: [
@@ -8,6 +9,7 @@ import { NavComponent } from './nav/nav.component';
   ],
   imports: [
     CommonModule,
+    AppRoutingModule,
   ],
   exports:[NavComponent]
 })

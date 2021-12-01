@@ -50,7 +50,6 @@ C:\Users\Nadija\Desktop\japtask1\JapTask1\NormativeCalculatorAPI\NormativeCalcul
 C:\Users\Nadija\Desktop\japtask1\JapTask1\NormativeCalculatorAPI\NormativeCalculatorAPI\NormativeCalculator.Services\obj\Debug\net5.0\NormativeCalculator.Services.AssemblyInfoInputs.cache
 C:\Users\Nadija\Desktop\japtask1\JapTask1\NormativeCalculatorAPI\NormativeCalculatorAPI\NormativeCalculator.Services\obj\Debug\net5.0\NormativeCalculator.Services.AssemblyInfo.cs
 C:\Users\Nadija\Desktop\japtask1\JapTask1\NormativeCalculatorAPI\NormativeCalculatorAPI\NormativeCalculator.Services\obj\Debug\net5.0\NormativeCalculator.Services.csproj.CoreCompileInputs.cache
-C:\Users\Nadija\Desktop\japtask1\JapTask1\NormativeCalculatorAPI\NormativeCalculatorAPI\NormativeCalculator.Services\obj\Debug\net5.0\NormativeCalculator.Services.csproj.CopyComplete
 C:\Users\Nadija\Desktop\japtask1\JapTask1\NormativeCalculatorAPI\NormativeCalculatorAPI\NormativeCalculator.Services\obj\Debug\net5.0\NormativeCalculator.Services.dll
 C:\Users\Nadija\Desktop\japtask1\JapTask1\NormativeCalculatorAPI\NormativeCalculatorAPI\NormativeCalculator.Services\obj\Debug\net5.0\ref\NormativeCalculator.Services.dll
 C:\Users\Nadija\Desktop\japtask1\JapTask1\NormativeCalculatorAPI\NormativeCalculatorAPI\NormativeCalculator.Services\obj\Debug\net5.0\NormativeCalculator.Services.pdb

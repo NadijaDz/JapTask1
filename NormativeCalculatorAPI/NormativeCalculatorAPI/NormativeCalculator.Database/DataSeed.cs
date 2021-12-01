@@ -31,32 +31,22 @@ namespace NormativeCalculator.Database
 
             List<Ingredient> ingredients = new List<Ingredient>()
             {
-                new Ingredient{ Id=1, Name="Oil",UnitPrice=2,UnitQuantity=1, MeasureUnit=MeasureUnit.L, CostIngredient=2*(1*1000)},
-                new Ingredient{ Id=2, Name="Water",UnitPrice=1,UnitQuantity=1,MeasureUnit=MeasureUnit.L, CostIngredient=1*(1*1000)},
-                new Ingredient{ Id=3, Name="Sugar",UnitPrice=2,UnitQuantity=4,MeasureUnit=MeasureUnit.kg, CostIngredient=(2*1000)/4},
-                new Ingredient{ Id=4, Name="Flour",UnitPrice=2,UnitQuantity=4,MeasureUnit=MeasureUnit.kg, CostIngredient=(2*1000)/4},
-                new Ingredient{ Id=5, Name="Chocolate",UnitPrice=2,UnitQuantity=4,MeasureUnit=MeasureUnit.gr, CostIngredient=2*4},
-                new Ingredient{ Id=6, Name="Rice",UnitPrice=2,UnitQuantity=4,MeasureUnit=MeasureUnit.kg, CostIngredient=(2*1000)/4},
-                new Ingredient{ Id=7, Name="Spaghetti",UnitPrice=2,UnitQuantity=4,MeasureUnit=MeasureUnit.gr,CostIngredient=2*4},
-                new Ingredient{ Id=8, Name="Chicken",UnitPrice=2,UnitQuantity=4,MeasureUnit=MeasureUnit.kg, CostIngredient=(2*1000)/4},
-                new Ingredient{ Id=9, Name="Avocado",UnitPrice=2,UnitQuantity=4,MeasureUnit=MeasureUnit.kg, CostIngredient=(2*1000)/4},
-                new Ingredient{ Id=10, Name="Salt",UnitPrice=2,UnitQuantity=4,MeasureUnit=MeasureUnit.kg, CostIngredient=(2*1000)/4},
-                new Ingredient{ Id=11, Name="Banana",UnitPrice=2,UnitQuantity=4,MeasureUnit=MeasureUnit.kg, CostIngredient=(2*1000)/4},
-                new Ingredient{ Id=12, Name="Apple",UnitPrice=2,UnitQuantity=4,MeasureUnit=MeasureUnit.kg, CostIngredient=(2*1000)/4},
-                new Ingredient{ Id=13, Name="Mayonnaise",UnitPrice=2,UnitQuantity=4,MeasureUnit=MeasureUnit.ml, CostIngredient=2*4},
-                new Ingredient{ Id=14, Name="Bread",UnitPrice=2,UnitQuantity=4,MeasureUnit=MeasureUnit.kom, CostIngredient=2*4},
+                new Ingredient{ Id=1, Name="Oil",CostIngredient=2,UnitQuantity=1, MeasureUnit=MeasureUnit.L, UnitPrice=2/1000},
+                new Ingredient{ Id=2, Name="Water",CostIngredient=1,UnitQuantity=1,MeasureUnit=MeasureUnit.L, UnitPrice=1/1000},
+                new Ingredient{ Id=3, Name="Sugar",CostIngredient=2,UnitQuantity=4,MeasureUnit=MeasureUnit.kg, UnitPrice=2/4000},
+                new Ingredient{ Id=4, Name="Flour",CostIngredient=2,UnitQuantity=4,MeasureUnit=MeasureUnit.kg, UnitPrice=2/4000},
+                new Ingredient{ Id=5, Name="Chocolate",CostIngredient=2,UnitQuantity=4,MeasureUnit=MeasureUnit.gr, UnitPrice=8},
+                new Ingredient{ Id=6, Name="Rice",CostIngredient=2,UnitQuantity=4,MeasureUnit=MeasureUnit.kg, UnitPrice=2/4000},
+                new Ingredient{ Id=7, Name="Spaghetti",CostIngredient=2,UnitQuantity=4,MeasureUnit=MeasureUnit.gr,UnitPrice=2*4},
+                new Ingredient{ Id=8, Name="Chicken",CostIngredient=2,UnitQuantity=4,MeasureUnit=MeasureUnit.kg, UnitPrice=2/4000},
+                new Ingredient{ Id=9, Name="Avocado",CostIngredient=2,UnitQuantity=4,MeasureUnit=MeasureUnit.kg, UnitPrice=2/4000},
+                new Ingredient{ Id=10, Name="Salt",CostIngredient=2,UnitQuantity=4,MeasureUnit=MeasureUnit.kg, UnitPrice=2/4000},
+                new Ingredient{ Id=11, Name="Banana",CostIngredient=2,UnitQuantity=4,MeasureUnit=MeasureUnit.kg, UnitPrice=2/4000},
+                new Ingredient{ Id=12, Name="Apple",CostIngredient=2,UnitQuantity=4,MeasureUnit=MeasureUnit.kg, UnitPrice=2/4000},
+                new Ingredient{ Id=13, Name="Mayonnaise",CostIngredient=2,UnitQuantity=4,MeasureUnit=MeasureUnit.ml, UnitPrice=8},
+                new Ingredient{ Id=14, Name="Bread",CostIngredient=2,UnitQuantity=4,MeasureUnit=MeasureUnit.kom, UnitPrice=8},
             };
             modelBuilder.Entity<Ingredient>().HasData(ingredients);
-
-            //List<MeasureUnits> measureUnits = new List<MeasureUnits>()
-            //{
-            //    new MeasureUnits{ Id=1, MeasureUnit="L"},
-            //    new MeasureUnits{ Id=2, MeasureUnit="kg"},
-            //    new MeasureUnits{ Id=3, MeasureUnit="gr"},
-            //    new MeasureUnits{ Id=4, MeasureUnit="ml"},
-            //    new MeasureUnits{ Id=5, MeasureUnit="kom"},
-            //};
-            //modelBuilder.Entity<MeasureUnits>().HasData(measureUnits);
         }
     }
 }

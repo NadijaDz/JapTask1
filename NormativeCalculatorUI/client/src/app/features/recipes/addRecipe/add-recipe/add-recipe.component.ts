@@ -135,12 +135,11 @@ export class AddRecipeComponent implements OnInit {
 
 
        var priceIngredient = 0;
-      if (ingredient.measureUnit.toString() == measureUnit || measureUnit == 'kom') 
-      {
-        priceIngredient = (ingredient.costIngredient * unitQuantity)/1000;
-      }
-      else{
-        priceIngredient=((ingredient.costIngredient/1000)*(unitQuantity))/1000;
+       if (measureUnit == 'kg' ||  measureUnit == 'L') {
+        priceIngredient = ingredient.unitPrice * (unitQuantity * 1000);
+      } 
+      else {
+        priceIngredient = ingredient.unitPrice * unitQuantity;
       }
     
       this.recipeForm.get('ingredients') ['controls'][index]['controls']['costIngredient'].setValue(priceIngredient);

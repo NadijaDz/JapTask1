@@ -43,7 +43,7 @@ namespace NormativeCalculatorAPI
             }
 
             app.UseHttpsRedirection();
-         
+
             app.UseRouting();
 
             app.UseCors(x => x

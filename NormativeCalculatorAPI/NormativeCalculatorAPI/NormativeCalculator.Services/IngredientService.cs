@@ -41,7 +41,7 @@ namespace NormativeCalculator.Services
             entity.CreatedAt = DateTime.Now;
             entity.IsDeleted = false;
             _context.Ingredients.Add(entity);
-            await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync(cancellationToken);
 
             return _mapper.Map<GetIngredientsResponse>(entity);
         }

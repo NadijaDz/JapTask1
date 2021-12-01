@@ -55,7 +55,7 @@ namespace NormativeCalculator.Services
                               UnitQuantity = c.UnitQuantity,
                               IngredinentName = c.Ingredient.Name,
                               MeasureUnits = c.MeasureUnit,
-                              CostOfIngredient = CalculatedPrice.CalculatedIngredientPrice(c.UnitQuantity, c.MeasureUnit, c.Ingredient.CostIngredient)
+                              CostOfIngredient = CalculatedPrice.CalculatedIngredientPrice(c.UnitQuantity, c.MeasureUnit, c.Ingredient.UnitPrice)
                           }
                         )
 
@@ -90,7 +90,7 @@ namespace NormativeCalculator.Services
                .ToList();
 
 
-            var countAllRecipes = _context.Recipes.Count();
+            var countAllRecipes = await _context.Recipes.CountAsync(cancellationToken);
             var data = _mapper.Map<List<GetRecipesResponse>>(list);
 
             return new PaginationResponse<List<GetRecipesResponse>>(data, countAllRecipes);
@@ -130,7 +130,9 @@ namespace NormativeCalculator.Services
             }
 
             await _context.SaveChangesAsync(cancellationToken);
+
             return _mapper.Map<GetRecipesResponse>(entity);
+
         }
 
     }

@@ -27,18 +27,18 @@ namespace NormativeCalculator.Core.Helper
             var costPerIngredient = request.RecipesIngredients
                 .Select(r => new CalculatedDto
                 {
-                    CostPerIngredient = (r.Ingredient.CostIngredient / 1000) * (CalculatedQuantityOnMinUnit(r.UnitQuantity, r.MeasureUnit))
+                    CostPerIngredient = CalculatedIngredientPrice(r.UnitQuantity, r.MeasureUnit, r.Ingredient.UnitPrice)
                 });
 
-            totalCost = costPerIngredient.Sum(x => x.CostPerIngredient / 1000);
+            totalCost = costPerIngredient.Sum(x => x.CostPerIngredient);
 
             return Math.Round(totalCost, 2);
 
         }
 
-        public static decimal CalculatedIngredientPrice(decimal quantity, MeasureUnit unit, decimal ingredientCost)
+        public static decimal CalculatedIngredientPrice(decimal quantity, MeasureUnit unit, decimal unitPrice)
         {
-            return Math.Round((ingredientCost / 1000) * ((CalculatedQuantityOnMinUnit(quantity, unit))/1000), 2);
+            return Math.Round(unitPrice * (CalculatedQuantityOnMinUnit(quantity, unit)), 2);
         }
     }
 }
